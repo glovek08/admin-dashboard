@@ -1,0 +1,82 @@
+:root.dark {
+    --blue-1: #000814;
+    --blue-2: #1b3552;
+    --blue-3: #001d3d;
+    --accent: #ffd60a;
+    --font-1: #f1f2f6;
+}
+:root.light {
+    --blue-1: #a6bcdf;
+    --blue-2: #dce8f4;
+    --blue-3: #7697ba;
+    --accent: #153d87;
+    --font-1: #282a32;
+}
+@font-face {
+    font-family: Roboto;
+    src: url("../assets/fonts/woff2/OpenSans-VariableFont_wdth\,wght.woff2") format("woff2"), 
+        url("../assets/fonts/woff/OpenSans-VariableFont_wdth\,wght.woff") format("woff"),
+        url("../assets/fonts/ttf/OpenSans-VariableFont_wdth\,wght.ttf") format("ttf");
+}
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+html {
+	/* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
+	font-family:
+		system-ui,
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji';
+	line-height: 1.15; /* 1. Correct the line height in all browsers. */
+	-webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+	-moz-tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
+	tab-size: 4; /* 3 */
+}
+
+body {
+    margin: 0;
+    background: var(--blue-1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100dvh;
+    width: 100%;
+}
+header {
+    border: 1px solid red;
+    background: var(--blue-2);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 5%;
+}
+main {
+    border: 1px solid green;
+}
+footer {
+    border: 1px solid blue;
+}
+.header-link {
+    outline: 1px solid white;
+}
+#nav-ul {
+    padding: 0;
+    margin: 0;
+    outline: 1px solid red;
+    width: fit-content;
+    list-style: none;
+}
+#nav-ul li {
+    margin: 0;
+    padding: 0;
+}
+
