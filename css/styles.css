@@ -11,6 +11,7 @@
     --blue-1: #a6bcdf;
     --blue-2: #dce8f4;
     --blue-3: #7697ba;
+    --gray-1: #353c48;
     --accent: #153d87;
     --font-1: #282a32;
 }
@@ -74,7 +75,7 @@ footer {
 }
 
 .header-link {
-    outline: 1px solid white;
+    outline: 1px solid rgb(46, 174, 50);
 }
 
 #nav-ul {
@@ -145,14 +146,16 @@ footer {
 
 #theme-checkbox:checked + #theme-checkbox-label #theme-checkbox-span::before {
     transform: translateX(-26px);
-    background: var(--blue-1);
-    width: 26px;
-    height: 23px;
-    top: -1.5px;
-    left: -1.5px;
 }
 
 #theme-checkbox:checked + #theme-checkbox-label {
-    background-color: #CCC;
-    border: 2px solid var(--blue-1);
+}
+#theme-icon-container {
+    outline: 1px solid red;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 11px;
 }

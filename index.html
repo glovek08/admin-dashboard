@@ -11,14 +11,19 @@
 <body>
     <header>
         <a href="http://www.theodinproject.com" target="_blank" rel="noopener noreferrer" class="header-link">
-            <img src="assets/tod-logo-small.svg" alt="The Odin Project Logo Small" height="40"/>
+            <img src="assets/odin-lined-white.png" alt="The Odin Project Logo Small" height="40" id="header-logo"/>
         </a>
         <nav>
             <ul id="nav-ul">
                 <li>
-                    <input type="checkbox" name="theme-checkbox" id="theme-checkbox" />
+
+                    <input type="checkbox" name="theme-checkbox" id="theme-checkbox" checked/> <!-- If this is checked, change the theme of :root to light-->
                     <label for="theme-checkbox" id="theme-checkbox-label">
                         <span id="theme-checkbox-span"></span>
+                        <span id="theme-icon-container">
+                            <img src="assets/light_mode_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="Light Mode" height="15" class="theme-icon" />
+                            <img src="assets/dark_mode_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark Mode" height="15" class="theme-icon" />
+                        </span>
                     </label>
                 </li>
             </ul>
