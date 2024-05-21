@@ -2,9 +2,11 @@
     --blue-1: #000814;
     --blue-2: #1b3552;
     --blue-3: #001d3d;
+    --gray-1: #a6b4c4;
     --accent: #ffd60a;
     --font-1: #f1f2f6;
 }
+
 :root.light {
     --blue-1: #a6bcdf;
     --blue-2: #dce8f4;
@@ -12,32 +14,34 @@
     --accent: #153d87;
     --font-1: #282a32;
 }
+
 @font-face {
     font-family: Roboto;
-    src: url("../assets/fonts/woff2/OpenSans-VariableFont_wdth\,wght.woff2") format("woff2"), 
+    src: url("../assets/fonts/woff2/OpenSans-VariableFont_wdth\,wght.woff2") format("woff2"),
         url("../assets/fonts/woff/OpenSans-VariableFont_wdth\,wght.woff") format("woff"),
         url("../assets/fonts/ttf/OpenSans-VariableFont_wdth\,wght.ttf") format("ttf");
 }
+
 *,
 ::before,
 ::after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 html {
-	/* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
-	font-family:
-		system-ui,
-		'Segoe UI',
-		Roboto,
-		Helvetica,
-		Arial,
-		sans-serif,
-		'Apple Color Emoji',
-		'Segoe UI Emoji';
-	line-height: 1.15; /* 1. Correct the line height in all browsers. */
-	-webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
-	-moz-tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
-	tab-size: 4; /* 3 */
+    font-family:
+        system-ui,
+        'Segoe UI',
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji';
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -moz-tab-size: 4;
+    tab-size: 4;
 }
 
 body {
@@ -50,6 +54,7 @@ body {
     min-height: 100dvh;
     width: 100%;
 }
+
 header {
     border: 1px solid red;
     background: var(--blue-2);
@@ -57,26 +62,97 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 5%;
+    padding: 5px 3%;
 }
+
 main {
     border: 1px solid green;
 }
+
 footer {
     border: 1px solid blue;
 }
+
 .header-link {
     outline: 1px solid white;
 }
+
 #nav-ul {
-    padding: 0;
+    padding: 2px;
     margin: 0;
     outline: 1px solid red;
     width: fit-content;
     list-style: none;
 }
+
 #nav-ul li {
+    margin: 0;
+    padding: 0;
+    outline: 1px solid green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
     margin: 0;
     padding: 0;
 }
 
+#theme-checkbox-label {
+    width: 60px;
+    height: 30px;
+    border: 2px solid var(--gray-1);
+    border-radius: 10px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: transparent;
+    transition: 0.3s;
+}
+
+#theme-checkbox-span {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 3px;
+    width: 24px;
+    height: 20px;
+    background: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#theme-checkbox-span::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--gray-1);
+    transition: 0.3s ease-in-out;
+    border-radius: 6px;
+}
+
+#theme-checkbox:checked + #theme-checkbox-label #theme-checkbox-span::before {
+    transform: translateX(-26px);
+    background: var(--blue-1);
+    width: 26px;
+    height: 23px;
+    top: -1.5px;
+    left: -1.5px;
+}
+
+#theme-checkbox:checked + #theme-checkbox-label {
+    background-color: #CCC;
+    border: 2px solid var(--blue-1);
+}
