@@ -64,6 +64,9 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 5px 3%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 main {
@@ -72,6 +75,31 @@ main {
 
 footer {
     border: 1px solid blue;
+}
+
+.header-button {
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-search-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 1px solid blue;
+    padding: 5px 10px;
+}
+
+#header-search-input {
+    background: transparent;
+    border: 2px solid var(--gray-1);
+    border-radius: 7px;
+    padding: 3px 7px;
+    color: var(--font-1);
+    font-weight: 700;
 }
 
 .header-link {
