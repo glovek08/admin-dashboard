@@ -69,14 +69,6 @@ header {
     left: 0;
 }
 
-main {
-    border: 1px solid green;
-}
-
-footer {
-    border: 1px solid blue;
-}
-
 .header-button {
     border: none;
     background: transparent;
@@ -89,8 +81,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1 1 0;
     outline: 1px solid blue;
-    padding: 5px 10px;
+    padding: 5px 10px 5px 5px;
+    max-width: 20%;
+    min-width: 120px;
 }
 
 #header-search-input {
@@ -100,6 +95,8 @@ footer {
     padding: 3px 7px;
     color: var(--font-1);
     font-weight: 700;
+    display: block;
+    width: 100%;
 }
 
 .header-link {
@@ -213,4 +210,32 @@ footer {
     justify-content: center;
     height: 100%;
     gap: 11px;
+}
+
+main {
+    border: 1px solid green;
+    margin-top: 55.7px;
+    width: 100%;
+    min-height: 100dvh;
+    max-height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+#main-sidebar {
+    background: var(--blue-2);
+    outline: 1px solid yellow;
+    width: 100%;
+}
+
+#main-container {
+    outline: 1px solid rgb(1, 122, 192);
+    width: 100%;
+}
+
+footer {
+    border: 1px solid blue;
+    background: var(--blue-2);
+    min-height: 100px;
+    width: 100%;
 }

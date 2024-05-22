@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <meta name="theme-color" content="#000814" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="javascript/script.js" defer></script>
 </head>
+
 <body>
     <header>
         <a href="http://www.theodinproject.com" target="_blank" rel="noopener noreferrer" class="header-link">
-            <img src="assets/odin-lined-white.png" alt="The Odin Project Logo Small" height="40" id="header-logo"/>
+            <img src="assets/odin-lined-white.png" alt="The Odin Project Logo Small" height="40" id="header-logo" />
         </a>
         <label id="header-search-label">
             <button class="header-button">
@@ -25,25 +28,39 @@
         <nav>
             <ul id="nav-ul">
                 <li>
-                    <input type="checkbox" name="theme-checkbox" id="theme-checkbox" checked/> <!-- If this is checked, change the theme of :root to light-->
+                    <input type="checkbox" name="theme-checkbox" id="theme-checkbox" checked />
+                    <!-- If this is checked, change the theme of :root to light-->
                     <label for="theme-checkbox" id="theme-checkbox-label">
                         <span id="theme-checkbox-span"></span>
                         <span id="theme-icon-container">
-                            <img src="assets/light_mode_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="Light Mode" height="15" class="theme-icon" />
-                            <img src="assets/dark_mode_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark Mode" height="15" class="theme-icon" />
+                            <img src="assets/light_mode_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="Light Mode"
+                                height="15" class="theme-icon" />
+                            <img src="assets/dark_mode_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark Mode" height="15"
+                                class="theme-icon" />
                         </span>
                     </label>
                 </li>
-                <li><span class="material-symbols-outlined">
-                    notifications
-                </span></li>
+                <li>
+                    <button class="header-button">
+                        <span class="material-symbols-outlined">
+                            notifications
+                        </span>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
     <main>
+        <aside id="main-sidebar">
+            <nav></nav>
+        </aside>
+        <section id="main-container">
+
+        </section>
     </main>
     <footer>
 
     </footer>
 </body>
+
 </html>
