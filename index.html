@@ -18,7 +18,7 @@
             <img src="assets/odin-lined-white.png" alt="The Odin Project Logo Small" height="40" id="header-logo" />
         </a>
         <label id="header-search-label">
-            <button class="header-button">
+            <button class="material-button">
                 <span class="material-symbols-outlined">
                     search
                 </span>
@@ -41,7 +41,7 @@
                     </label>
                 </li>
                 <li>
-                    <button class="header-button">
+                    <button class="material-button">
                         <span class="material-symbols-outlined">
                             notifications
                         </span>
@@ -52,7 +52,19 @@
     </header>
     <main>
         <aside id="main-sidebar">
-            <nav></nav>
+            <div id="sidebar-title-container">
+                <span class="material-symbols-outlined no-effects">
+                    dashboard
+                </span>
+                <h2 id="sidebar-title">Dashboard</h2>
+            </div>
+            <nav>
+                <div id="dashboard-wrapper">
+                        <button class="sidebar-button material-button" name="sidebar-home">
+                            <span class="material-symbols-outlined">Home</span>Home
+                        </button>
+                </div>
+            </nav>
         </aside>
         <section id="main-container">
             <section id="projects" class="grid-item">

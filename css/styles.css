@@ -12,7 +12,7 @@
     --blue-2: #dce8f4;
     --blue-3: #7697ba;
     --gray-1: #353c48;
-    --accent: #bd4a02;
+    --accent: #e00c0c;
     --font-1: #282a32;
 }
 
@@ -70,7 +70,7 @@ header {
     left: 0;
 }
 
-.header-button {
+.material-button {
     border: none;
     background: transparent;
     display: flex;
@@ -102,29 +102,6 @@ header {
 
 .header-link {
     outline: 1px solid rgb(46, 174, 50);
-}
-
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24;
-    transition: .2s;
-    color: var(--gray-1);
-    display: inline-block;
-    text-align: center;
-    width: 30px;
-}
-
-.material-symbols-outlined:hover {
-    font-variation-settings:
-        'FILL' 1,
-        'wght' 600,
-        'GRAD' 0,
-        'opsz' 24;
-    cursor: pointer;
-    font-size: 30px;
 }
 
 #nav-ul {
@@ -220,13 +197,55 @@ main {
     min-height: 100dvh;
     max-height: fit-content;
     display: grid;
-    grid-template-columns: 1fr 4fr; /* prevent the sidebar from getting smaller than 200px*/
+    grid-template-columns: minmax(45px, 200px) 4fr;
+    /* prevent the sidebar from getting smaller than 200px*/
 }
 
 #main-sidebar {
     background: var(--blue-2);
     outline: 1px solid yellow;
     width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-left: 10%;
+}
+
+#sidebar-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    outline: 1px solid red;
+}
+
+#dashboard-wrapper {
+    outline: 1px solid green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-button {
+    color: var(--font-1);
+    font-size: 1.2em;
+    cursor: pointer;
+    height: 40px;
+    transition: 3ms ease-in-out;
+}
+.sidebar-button:hover {
+    color: var(--accent);
+}
+
+.sidebar-button:hover > span {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 600,
+        'GRAD' 0,
+        'opsz' 24;
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--accent);
 }
 
 #main-container {
@@ -234,7 +253,7 @@ main {
     width: 100%;
     display: grid;
     grid-template: 1fr 1fr / 3fr 1fr;
-    grid-template-areas: 
+    grid-template-areas:
         "projects announcements"
         "projects trending";
     gap: 15px;
@@ -245,16 +264,20 @@ main {
     outline: 1px solid rgb(0, 168, 0);
     border-radius: 5px;
 }
+
 #main-container .grid-item h2 {
     padding-left: 20px;
 }
+
 #projects {
     grid-area: projects;
     padding: 20px;
 }
+
 #announcements {
     grid-area: announcements;
 }
+
 #trending {
     grid-area: trending;
 }
@@ -268,6 +291,7 @@ main {
     gap: 20px;
     justify-content: center;
 }
+
 .project-item {
     height: 250px;
     background: var(--blue-2);
@@ -275,11 +299,14 @@ main {
     padding: 10px 20px;
     border-left: 5px solid var(--accent);
 }
+
 .project-text {
     outline: 1px solid red;
-    max-height: 50%;
+    height: 50%;
+    padding: 5px;
     overflow: auto;
 }
+
 .project-toolbox {
     margin-top: 10px;
     outline: 1px solid yellow;
@@ -290,12 +317,41 @@ main {
     align-items: center;
     justify-content: flex-end;
 }
+
 footer {
     border: 1px solid blue;
     background: var(--blue-2);
     min-height: 100px;
     width: 100%;
 }
+
 .clear-float {
     clear: both;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    transition: .2s;
+    color: var(--gray-1);
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+}
+
+.material-symbols-outlined:hover:not(.no-effects) {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 600,
+        'GRAD' 0,
+        'opsz' 24;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+:focus {
+    outline: 3px solid var(--accent);
 }
