@@ -206,7 +206,7 @@ main {
     outline: 1px solid yellow;
     width: 100%;
     display: flex;
-    align-items: flex-start ;
+    align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
     padding-left: 10%;
@@ -230,6 +230,7 @@ main {
     padding: 5px;
     height: 85%;
 }
+
 .dashboard-section {
     display: flex;
     align-items: flex-start;
@@ -237,9 +238,11 @@ main {
     flex-direction: column;
     width: 100%;
 }
+
 #dashboard-upper {
     outline: 1px solid blue;
 }
+
 #dashboard-lower {
     outline: 1px solid yellow;
 }
@@ -256,11 +259,12 @@ main {
     justify-content: flex-start;
     border-radius: 5px;
 }
+
 .sidebar-button:hover {
     color: var(--accent);
 }
 
-.sidebar-button:hover > span {
+.sidebar-button:hover>span {
     font-variation-settings:
         'FILL' 1,
         'wght' 600,
@@ -292,17 +296,13 @@ main {
     padding-left: 20px;
 }
 
+section h2 {
+    align-self: flex-start;
+}
+
 #projects {
     grid-area: projects;
     padding: 20px;
-}
-
-#announcements {
-    grid-area: announcements;
-}
-
-#trending {
-    grid-area: trending;
 }
 
 #projects-wrapper {
@@ -340,6 +340,63 @@ main {
     align-items: center;
     justify-content: flex-end;
 }
+
+#announcements {
+    grid-area: announcements;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background: var(--blue-2);
+}
+
+#announcements-wrapper {
+    outline: 1px solid red;
+    height: 75%;
+    width: 95%;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.announcement-item {
+    width: 100%;
+    padding: 0 10px;
+    border-bottom: 1px solid var(--gray-1);
+    max-height: 150px;
+}
+
+.announcement-item:nth-last-of-type(1) {
+    border-bottom: none;
+}
+
+.announcement-title {
+    margin: 10px 0 5px 0;
+    padding: 0;
+}
+
+.announcement-text {
+    margin: 0 0 0 10px;
+    padding: 0;
+}
+.announcements-icons-box {
+    height: 30px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#trending {
+    grid-area: trending;
+}
+
 
 footer {
     border: 1px solid blue;
