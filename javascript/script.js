@@ -3,6 +3,7 @@ const headerLogo = document.querySelector('#header-logo');
 const themeCheckbox = document.querySelector('#theme-checkbox');
 const themeCheckboxLabel = document.querySelector('#theme-checkbox-label');
 const sidebarButtons = document.querySelectorAll(".sidebar-button");
+const sidebarSpans = document.querySelectorAll('.sidebar-span');
 
 if (localStorage.getItem('theme') === 'light') {
     root.classList.remove('dark');
@@ -31,10 +32,37 @@ const changeTheme = () => {
 }
 
 themeCheckbox.addEventListener('click', changeTheme);
+
+
+let span = false;
+
+// sidebarSpan.forEach(spanEl => {
+//     spanEl.addEventListener('click', (event) => {
+//         console.log(event.target.parentElement);
+//         sidebarSpan.forEach(spanElement => spanElement.classList.remove('dashboard-active'));
+//         event.target.parentElement.classList.add('dashboard-active');
+//     });
+// });
+
+// sidebarButtons.forEach(button => {
+//     button.addEventListener('click', (event) => {
+//         sidebarButtons.forEach(button => button.classList.remove('dashboard-active'));
+//         sidebarSpan.forEach(spanElement => spanElement.classList.remove('dashboard-active'));
+//         event.target.classList.add('dashboard-active');
+//     });
+// });
+
+sidebarSpans.forEach(spanEl => {
+    spanEl.addEventListener('click', (event) => {
+        sidebarButtons.forEach(button => button.classList.remove('dashboard-active'));
+        event.target.parentElement.classList.add('dashboard-active');
+    });
+});
+
 sidebarButtons.forEach(button => {
     button.addEventListener('click', (event) => {
         sidebarButtons.forEach(button => button.classList.remove('dashboard-active'));
-        event.target.classList.add('dashboard-active');
+        event.currentTarget.classList.add('dashboard-active');
     });
 });
 

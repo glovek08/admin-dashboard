@@ -11,7 +11,7 @@
 }
 
 :root.light {
-    --blue-1: #c2d1eb;
+    --blue-1: #b7caec;
     --blue-2: #dce8f4;
     --blue-3: #e1e4f7;
     --gray-1: #353c48;
@@ -202,7 +202,10 @@ main {
     min-height: 100dvh;
     max-height: fit-content;
     display: grid;
-    grid-template-columns: minmax(55px, 190px) 4fr;
+    grid-template-columns: 190px 4fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "sidebar main"
     /* prevent the sidebar from getting smaller than 200px*/
 }
 
@@ -214,6 +217,9 @@ main {
     justify-content: flex-start;
     flex-direction: column;
     padding-left: 10%;
+    outline: 1px solid yellow;
+    overflow: hidden;
+    grid-area: sidebar;
 }
 
 #sidebar-title-container {
@@ -221,6 +227,7 @@ main {
     align-items: center;
     justify-content: flex-start;
     cursor: default;
+    outline: 1px solid blue;
 }
 
 #dashboard-wrapper {
@@ -231,6 +238,8 @@ main {
     flex-direction: column;
     padding: 5px;
     height: 85%;
+    outline: 1px solid green;
+    width: 100%;
 }
 
 .dashboard-section {
@@ -240,6 +249,7 @@ main {
     flex-direction: column;
     width: 100%;
     gap: 5px;
+
 }
 
 .sidebar-button {
@@ -253,6 +263,7 @@ main {
     align-items: center;
     justify-content: flex-start;
     border-radius: 5px;
+    z-index: 10;
 }
 
 .sidebar-button:hover {
@@ -269,15 +280,18 @@ main {
     font-size: 30px;
     color: var(--accent);
 }
-
+.sidebar-button:focus {
+    background: var(--active);
+}
 .dashboard-active {
     background: var(--active);
 }
 
 #main-container {
+    grid-area: main;
     width: 100%;
     display: grid;
-    grid-template: 1fr 1fr / 3fr 1fr;
+    grid-template: 1fr 1fr / 4fr 1fr;
     grid-template-areas:
         "projects announcements"
         "projects trending";
@@ -338,11 +352,14 @@ section h2 {
 
 #announcements {
     grid-area: announcements;
+    justify-self: right;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     background: var(--blue-3);
+    width: 100%;
+    max-width: 600px;
 }
 
 #announcements-wrapper {
@@ -389,11 +406,14 @@ section h2 {
 
 #trending {
     grid-area: trending;
+    justify-self: right;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     background: var(--blue-3);
+    width: 100%;
+    max-width: 600px;
 }
 
 #trending-wrapper {
@@ -496,5 +516,47 @@ footer {
 
 :focus {
     outline: 3px solid var(--accent);
+}
+
+@media screen and (max-width: 1300px) {
+    #main-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(auto-fit(1fr));
+        grid-template-areas: 
+            "projects projects"
+            "projects projects"
+            "announcements trending"
+    }
+}
+@media screen and (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 1fr;
+        grid-template-areas: 
+            "sidebar"
+            "main";
+    }
+    #main-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+        outline: 1px solid red;
+    }
+    #dashboard-wrapper {
+        flex-direction: row;
+    }
+    .dashboard-section {
+        flex-direction: row;
+    }
+    #dashboard-upper {
+        flex-direction: row;
+    }
+    #dashboard-lower {
+        flex-direction: row;
+    }
+    #sidebar-title-container {
+        width: 0;
+        display: none;
+    }
 }
 
