@@ -2,6 +2,7 @@ const root = document.documentElement;
 const headerLogo = document.querySelector('#header-logo');
 const themeCheckbox = document.querySelector('#theme-checkbox');
 const themeCheckboxLabel = document.querySelector('#theme-checkbox-label');
+const sidebarButtons = document.querySelectorAll(".sidebar-button");
 
 if (localStorage.getItem('theme') === 'light') {
     root.classList.remove('dark');
@@ -30,4 +31,10 @@ const changeTheme = () => {
 }
 
 themeCheckbox.addEventListener('click', changeTheme);
+sidebarButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+        sidebarButtons.forEach(button => button.classList.remove('dashboard-active'));
+        event.target.classList.add('dashboard-active');
+    });
+});
 

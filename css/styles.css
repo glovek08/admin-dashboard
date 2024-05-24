@@ -1,19 +1,25 @@
 :root.dark {
     --blue-1: #000814;
     --blue-2: #1b3552;
-    --blue-3: #001d3d;
+    --blue-3: #071c33;
     --gray-1: #a6b4c4;
+    --active: rgb(24, 38, 58);
     --accent: #33dc00;
     --font-1: #f1f2f6;
+    --green-1: rgb(9, 189, 0);
+    --red-1: rgb(224, 7, 7);
 }
 
 :root.light {
     --blue-1: #c2d1eb;
     --blue-2: #dce8f4;
-    --blue-3: #7697ba;
+    --blue-3: #e1e4f7;
     --gray-1: #353c48;
+    --active: rgb(188, 189, 193);
     --accent: #e00c0c;
     --font-1: #282a32;
+    --green-1: rgb(3, 99, 19);
+    --red-1: rgb(184, 2, 2);
 }
 
 @font-face {
@@ -58,7 +64,6 @@ body {
 }
 
 header {
-    border: 1px solid red;
     background: var(--blue-2);
     width: 100%;
     display: flex;
@@ -68,6 +73,15 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+}
+#fake-header {
+    background: var(--blue-2);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 3%;
+    visibility: hidden;
 }
 
 .material-button {
@@ -83,7 +97,6 @@ header {
     align-items: center;
     justify-content: center;
     flex: 1 1 0;
-    outline: 1px solid blue;
     padding: 5px 10px 5px 5px;
     max-width: 20%;
     min-width: 120px;
@@ -100,14 +113,10 @@ header {
     width: 100%;
 }
 
-.header-link {
-    outline: 1px solid rgb(46, 174, 50);
-}
 
 #nav-ul {
     padding: 5px 10px;
     margin: 0;
-    outline: 1px solid rgb(119, 0, 255);
     width: 100%;
     list-style: none;
     display: flex;
@@ -121,7 +130,6 @@ header {
     margin: 0;
     padding: 0;
     height: 30px;
-    outline: 1px solid green;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,7 +189,6 @@ header {
 }
 
 #theme-icon-container {
-    outline: 1px solid red;
     position: relative;
     display: flex;
     align-items: center;
@@ -191,8 +198,6 @@ header {
 }
 
 main {
-    border: 1px solid green;
-    margin-top: 55.7px;
     width: 100%;
     min-height: 100dvh;
     max-height: fit-content;
@@ -203,7 +208,6 @@ main {
 
 #main-sidebar {
     background: var(--blue-2);
-    outline: 1px solid yellow;
     width: 100%;
     display: flex;
     align-items: flex-start;
@@ -216,7 +220,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    outline: 1px solid red;
     cursor: default;
 }
 
@@ -225,7 +228,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    outline: 1px solid red;
     flex-direction: column;
     padding: 5px;
     height: 85%;
@@ -237,14 +239,7 @@ main {
     justify-content: center;
     flex-direction: column;
     width: 100%;
-}
-
-#dashboard-upper {
-    outline: 1px solid blue;
-}
-
-#dashboard-lower {
-    outline: 1px solid yellow;
+    gap: 5px;
 }
 
 .sidebar-button {
@@ -275,8 +270,11 @@ main {
     color: var(--accent);
 }
 
+.dashboard-active {
+    background: var(--active);
+}
+
 #main-container {
-    outline: 1px solid rgb(1, 122, 192);
     width: 100%;
     display: grid;
     grid-template: 1fr 1fr / 3fr 1fr;
@@ -288,7 +286,6 @@ main {
 }
 
 #main-container section {
-    outline: 1px solid rgb(0, 168, 0);
     border-radius: 5px;
 }
 
@@ -324,7 +321,6 @@ section h2 {
 }
 
 .project-text {
-    outline: 1px solid red;
     height: 50%;
     padding: 5px;
     overflow: auto;
@@ -332,7 +328,6 @@ section h2 {
 
 .project-toolbox {
     margin-top: 10px;
-    outline: 1px solid rgb(172, 172, 31);
     min-height: 40px;
     width: 50%;
     float: right;
@@ -347,11 +342,10 @@ section h2 {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    background: var(--blue-2);
+    background: var(--blue-3);
 }
 
 #announcements-wrapper {
-    outline: 1px solid red;
     height: 75%;
     width: 95%;
     min-width: 300px;
@@ -395,11 +389,79 @@ section h2 {
 
 #trending {
     grid-area: trending;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background: var(--blue-3);
+}
+
+#trending-wrapper {
+    height: 75%;
+    width: 95%;
+    min-width: 300px;
+    max-width: 500px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: auto;
+    gap: 10px;
+}
+.trending-card {
+    width: 100%;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    grid-template-areas: 
+        "brand-info price-chart"
+        "price-prospect price-prospect";
+        border-bottom: 1px solid var(--gray-1);
+}
+.trending-card:nth-last-of-type(1) {
+    border-bottom: none;
+}
+.brand-info {
+    grid-area: brand-info;
+}
+.price-prospect {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: .9em;
+    grid-area: price-prospect;
+}
+.price-trend {
+    font-size: .5em;
+}
+.trending-up {
+    color: var(--green-1) !important;
+}
+.trending-down {
+    color: var(--red-1) !important;
+}
+.price-chart {
+    grid-area: price-chart;
+}
+.chart-leyend {
+    margin-left: auto;
+    margin-right: 5px;
+    color: var(--font-1);
+    font-style: italic;
+}
+#service-provider {
+    align-self: flex-end;
+    margin-top: auto;
+    margin-bottom: 5%;
+    margin-right: 5%;
+    color: var(--gray-1);
 }
 
 
 footer {
-    border: 1px solid blue;
     background: var(--blue-2);
     min-height: 100px;
     width: 100%;
@@ -435,3 +497,4 @@ footer {
 :focus {
     outline: 3px solid var(--accent);
 }
+

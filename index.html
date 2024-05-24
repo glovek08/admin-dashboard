@@ -50,6 +50,43 @@
             </ul>
         </nav>
     </header>
+    <div id="fake-header">
+        <a href="http://www.theodinproject.com" target="_blank" rel="noopener noreferrer" class="header-link">
+            <img src="assets/odin-lined-white.png" alt="The Odin Project Logo Small" height="40" id="header-logo" />
+        </a>
+        <label id="header-search-label">
+            <button class="material-button">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+            </button>
+            <input type="search" name="header-search-input" id="header-search-input" placeholder="Search" />
+        </label>
+        <nav>
+            <ul id="nav-ul">
+                <li>
+                    <input type="checkbox" name="theme-checkbox" id="theme-checkbox" checked />
+                    <!-- If this is checked, change the theme of :root to light-->
+                    <label for="theme-checkbox" id="theme-checkbox-label">
+                        <span id="theme-checkbox-span"></span>
+                        <span id="theme-icon-container">
+                            <img src="assets/light_mode_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="Light Mode"
+                                height="15" class="theme-icon" />
+                            <img src="assets/dark_mode_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark Mode" height="15"
+                                class="theme-icon" />
+                        </span>
+                    </label>
+                </li>
+                <li>
+                    <button class="material-button">
+                        <span class="material-symbols-outlined">
+                            notifications
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
     <main>
         <aside id="main-sidebar">
             <div id="sidebar-title-container">
@@ -60,7 +97,7 @@
             </div>
             <nav id="dashboard-wrapper">
                 <div id="dashboard-upper" class="dashboard-section">
-                    <button class="sidebar-button material-button" id="sidebar-home">
+                    <button class="sidebar-button material-button dashboard-active" id="sidebar-home">
                         <span class="material-symbols-outlined">Home</span>Home
                     </button>
                     <button class="sidebar-button material-button" id="sidebar-profile">
@@ -226,28 +263,127 @@
                         <h3 class="announcement-title">Pickled kogi microdosing VHS</h3>
                         <p class="announcement-text">Marfa master cleanse kogi, man braid echo park kinfolk edison bulb
                             pabst four dollar toast</p>
-                            <div class="announcements-icons-box">
-                                <button class="material-button">
-                                    <span class="material-symbols-outlined">
-                                        share
-                                    </span>
-                                </button>
-                                <button class="material-button">
-                                    <span class="material-symbols-outlined">
-                                        thumb_up
-                                    </span>
-                                </button>
-                                <button class="material-button">
-                                    <span class="material-symbols-outlined">
-                                        delete
-                                    </span>
-                                </button>
-                            </div>
+                        <div class="announcements-icons-box">
+                            <button class="material-button">
+                                <span class="material-symbols-outlined">
+                                    share
+                                </span>
+                            </button>
+                            <button class="material-button">
+                                <span class="material-symbols-outlined">
+                                    thumb_up
+                                </span>
+                            </button>
+                            <button class="material-button">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
             <section id="trending" class="grid-item">
                 <h2>Trending</h2>
+                <div id="trending-wrapper">
+                    <div class="trending-card">
+                        <div class="brand-info">
+                            <small class="stock">Bigsoft Corporation.</small>
+                            <div class="stock-owner">BGST</div>
+                            <div class="price">$250,88</div>
+                        </div>
+                        <div class="price-chart">
+                            <svg height="auto" viewBox="0 0 115 55" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 53.514c2.8-.948 8.4-3.154 14-4.739s8.4-1.493 14-3.184 8.4-3.932 14-5.271c5.6-1.34 8.4.763 14-1.424 5.6-2.186 8.4-6.525 14-9.507 5.6-2.982 8.4-3.142 14-5.404 5.6-2.261 8.4-3.5 14-5.904 5.6-2.405 11.2-4.897 14-6.121L115 55H0Z"
+                                    fill="#2dc7001a" />
+                                <path
+                                    d="M0 53.514c2.8-.948 8.4-3.154 14-4.739s8.4-1.493 14-3.184 8.4-3.932 14-5.271c5.6-1.34 8.4.763 14-1.424 5.6-2.186 8.4-6.525 14-9.507 5.6-2.982 8.4-3.142 14-5.404 5.6-2.261 8.4-3.5 14-5.904 5.6-2.405 11.2-4.897 14-6.121"
+                                    fill="none" stroke="#2dc700" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="price-prospect trending-up">
+                            <span class="material-symbols-outlined no-effects price-trend trending-up">
+                                trending_up
+                            </span>
+                            +$6,58 (2.53%)
+                            <small class="chart-leyend">*30 days</small>
+                        </div>
+                    </div>
+                    <div class="trending-card">
+                        <div class="brand-info">
+                            <small class="stock">Edison Inc.</small>
+                            <div class="stock-owner">EDDI</div>
+                            <div class="price">$128,88</div>
+                        </div>
+                        <div class="price-chart">
+                            <svg height="auto" viewBox="0 0 115 55" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 2.737c2.8.576 8.4 1.385 14 2.88 5.6 1.496 8.4 2.183 14 4.598 5.6 2.414 8.4 5.473 14 7.474 5.6 2.001 8.4 2.441 14 2.53 5.6.088 8.4-4.226 14-2.088 5.6 2.137 8.4 11.14 14 12.775 5.6 1.635 8.4-6.263 14-4.6 5.6 1.662 11.2 10.33 14 12.912L115 55H0Z"
+                                    fill="#eb1c001a" />
+                                <path
+                                    d="M0 2.737c2.8.576 8.4 1.385 14 2.88 5.6 1.496 8.4 2.183 14 4.598 5.6 2.414 8.4 5.473 14 7.474 5.6 2.001 8.4 2.441 14 2.53 5.6.088 8.4-4.226 14-2.088 5.6 2.137 8.4 11.14 14 12.775 5.6 1.635 8.4-6.263 14-4.6 5.6 1.662 11.2 10.33 14 12.912"
+                                    fill="none" stroke="#eb1c00" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="price-prospect trending-down">
+                            <span class="material-symbols-outlined no-effects price-trend trending-down">
+                                trending_down
+                            </span>
+                            -$17,18 (13.30%)
+                            <small class="chart-leyend">*30 days</small>
+                        </div>
+                    </div>
+                    <div class="trending-card">
+                        <div class="brand-info">
+                            <small class="stock">E-Corp.</small>
+                            <div class="stock-owner">EVIL</div>
+                            <div class="price">$1612,13</div>
+                        </div>
+                        <div class="price-chart">
+                            <svg height="auto" viewBox="0 0 115 55" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 20.415c2.8-1.205 8.4-9.171 14-6.023 5.6 3.147 8.4 22.329 14 21.761 5.6-.567 8.4-20.163 14-24.599 5.6-4.435 8.4 3.428 14 2.422 5.6-1.005 8.4-13.172 14-7.45 5.6 5.723 8.4 30.902 14 36.062 5.6 5.16 8.4-3.394 14-10.26s11.2-19.257 14-24.071L115 55H0Z"
+                                    fill="#02e80b1a" />
+                                <path
+                                    d="M0 20.415c2.8-1.205 8.4-9.171 14-6.023 5.6 3.147 8.4 22.329 14 21.761 5.6-.567 8.4-20.163 14-24.599 5.6-4.435 8.4 3.428 14 2.422 5.6-1.005 8.4-13.172 14-7.45 5.6 5.723 8.4 30.902 14 36.062 5.6 5.16 8.4-3.394 14-10.26s11.2-19.257 14-24.071"
+                                    fill="none" stroke="#02e80b" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="price-prospect trending-up">
+                            <span class="material-symbols-outlined no-effects price-trend trending-up">
+                                trending_up
+                            </span>
+                            +$200,54 (12.30%)
+                            <small class="chart-leyend">*30 days</small>
+                        </div>
+                    </div>
+                    <div class="trending-card">
+                        <div class="brand-info">
+                            <small class="stock">Analog Ventures.</small>
+                            <div class="stock-owner">ANAL</div>
+                            <div class="price">$69,13</div>
+                        </div>
+                        <div class="price-chart">
+                            <svg height="auto" viewBox="0 0 115 55" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 54.067c2.8-.92 8.4-3.358 14-4.604 5.6-1.245 8.4.452 14-1.622 5.6-2.073 8.4-5.946 14-8.745 5.6-2.8 8.4-3.02 14-5.251 5.6-2.23 8.4-3.843 14-5.902 5.6-2.06 8.4-3.108 14-4.393 5.6-1.285 8.4 2.078 14-2.034 5.6-4.113 11.2-14.822 14-18.528L115 55H0Z"
+                                    fill="#02e80b1a" />
+                                <path
+                                    d="M0 54.067c2.8-.92 8.4-3.358 14-4.604 5.6-1.245 8.4.452 14-1.622 5.6-2.073 8.4-5.946 14-8.745 5.6-2.8 8.4-3.02 14-5.251 5.6-2.23 8.4-3.843 14-5.902 5.6-2.06 8.4-3.108 14-4.393 5.6-1.285 8.4 2.078 14-2.034 5.6-4.113 11.2-14.822 14-18.528"
+                                    fill="none" stroke="#02e80b" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="price-prospect trending-up">
+                            <span class="material-symbols-outlined no-effects price-trend trending-up">
+                                trending_up
+                            </span>
+                            +$28,34 (41.12%)
+                            <small class="chart-leyend">*30 days</small>
+                        </div>
+                    </div>
+                </div>
+                <small id="service-provider">MakeItRain Finances</small>
             </section>
         </section>
     </main>
