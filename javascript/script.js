@@ -5,6 +5,8 @@ const themeCheckboxLabel = document.querySelector('#theme-checkbox-label');
 const sidebarButtons = document.querySelectorAll(".sidebar-button");
 const sidebarSpans = document.querySelectorAll('.sidebar-span');
 
+checkScroll(); //Applies a bottom borded to each project item's text box if the text content is overflowing Y.
+
 if (localStorage.getItem('theme') === 'light') {
     root.classList.remove('dark');
     root.classList.add('light');
@@ -32,25 +34,7 @@ const changeTheme = () => {
 }
 
 themeCheckbox.addEventListener('click', changeTheme);
-
-
-let span = false;
-
-// sidebarSpan.forEach(spanEl => {
-//     spanEl.addEventListener('click', (event) => {
-//         console.log(event.target.parentElement);
-//         sidebarSpan.forEach(spanElement => spanElement.classList.remove('dashboard-active'));
-//         event.target.parentElement.classList.add('dashboard-active');
-//     });
-// });
-
-// sidebarButtons.forEach(button => {
-//     button.addEventListener('click', (event) => {
-//         sidebarButtons.forEach(button => button.classList.remove('dashboard-active'));
-//         sidebarSpan.forEach(spanElement => spanElement.classList.remove('dashboard-active'));
-//         event.target.classList.add('dashboard-active');
-//     });
-// });
+window.addEventListener('resize', checkScroll);
 
 sidebarSpans.forEach(spanEl => {
     spanEl.addEventListener('click', (event) => {
@@ -65,4 +49,15 @@ sidebarButtons.forEach(button => {
         event.currentTarget.classList.add('dashboard-active');
     });
 });
+function checkScroll() {
+    const projectTextBox = document.querySelectorAll('.project-text');
+    projectTextBox.forEach(element => {
+        if (element.scrollHeight > element.clientHeight) {
+            element.classList.add('scrollable');
+        } else {
+            element.classList.remove('scrollable');
+        }
+    })
+}
+
 
