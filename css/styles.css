@@ -16,7 +16,7 @@
     --blue-2: #edf4fb;
     --blue-3: #e3f3ff;
     --gray-1: #353c48;
-    --active: rgb(188, 189, 193);
+    --active: rgb(208, 212, 228);
     --accent: #e00c0c;
     --font-1: #282a32;
     --green-1: rgb(3, 99, 19);
@@ -224,6 +224,7 @@ main {
     justify-content: flex-start;
     flex-direction: column;
     padding-left: 10%;
+    padding-right: 5%;
     overflow: hidden;
     grid-area: sidebar;
 }
@@ -323,7 +324,7 @@ section h2 {
 #projects-wrapper {
     padding: 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 350px);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 350px));
     grid-template-rows: 280px;
     grid-auto-rows: 280px;
     gap: 20px;
@@ -527,26 +528,34 @@ footer {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 10px 0 2px 0;
+    padding: 10px 0 20px 0;
     color: var(--gray-1);
 }
 .footer-menu {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: 30%;
+    flex-wrap: wrap;
     gap: 10%;
+    padding: 5px;
 }
 #footer-ul {
     list-style: none;
     padding: 0;
     display: flex;
-}
-#footer-ul li {
-    margin: 5px;
+    margin: 0;
 }
 .footer-item {
     padding: 5px 10px;
 }
+footer p {
+    margin: 5px;
+}
+#footer-ul li {
+    margin: 5px;
+}
+
 .footer-social {
     display: flex;
     align-items: center;
@@ -572,9 +581,11 @@ footer {
     border: none;
     outline: none;
     color: var(--gray-1);
+    transition: transform .2s ease-in-out;
 }
 .fa-brands:hover {
     color: var(--accent);
+    transform: scale(1.2);
 }
 
 @media screen and (max-width: 1300px) {
