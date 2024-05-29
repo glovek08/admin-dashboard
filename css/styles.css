@@ -8,6 +8,7 @@
     --font-1: #f1f2f6;
     --green-1: rgb(9, 189, 0);
     --red-1: rgb(224, 7, 7);
+    --visited: rgb(220, 114, 206);
 }
 
 :root.light {
@@ -20,8 +21,11 @@
     --font-1: #282a32;
     --green-1: rgb(3, 99, 19);
     --red-1: rgb(184, 2, 2);
+    --visited: rgb(130, 11, 114);
 }
-
+a:visited {
+    color: var(--visited);
+}
 @font-face {
     font-family: Roboto;
     src: url("../assets/fonts/woff2/OpenSans-VariableFont_wdth\,wght.woff2") format("woff2"),
@@ -524,6 +528,7 @@ footer {
     justify-content: center;
     flex-direction: column;
     padding: 10px 0 2px 0;
+    color: var(--gray-1);
 }
 .footer-menu {
     display: flex;
@@ -556,17 +561,17 @@ footer {
 }
 .footer-anchor {
     text-decoration: none;
-    color: var(--font-1);
     transition: 0.1s;
+    color: var(--gray-1);
 }
 .footer-anchor:hover {
     color: var(--accent);
 }
 .fa-brands {
-    color: var(--font-1);
     margin: 5px;
     border: none;
     outline: none;
+    color: var(--gray-1);
 }
 .fa-brands:hover {
     color: var(--accent);
