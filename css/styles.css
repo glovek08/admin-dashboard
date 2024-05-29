@@ -12,8 +12,8 @@
 
 :root.light {
     --blue-1: #b7caec;
-    --blue-2: #dce8f4;
-    --blue-3: #e1e4f7;
+    --blue-2: #edf4fb;
+    --blue-3: #e3f3ff;
     --gray-1: #353c48;
     --active: rgb(188, 189, 193);
     --accent: #e00c0c;
@@ -429,7 +429,8 @@ section h2 {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-X: hidden;
     gap: 10px;
 }
 .trending-card {
@@ -483,13 +484,6 @@ section h2 {
     color: var(--gray-1);
 }
 
-
-footer {
-    background: var(--blue-2);
-    min-height: 100px;
-    width: 100%;
-}
-
 .clear-float {
     clear: both;
 }
@@ -521,6 +515,63 @@ footer {
     outline: 3px solid var(--accent);
 }
 
+footer {
+    background: var(--blue-3);
+    min-height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 0 2px 0;
+}
+.footer-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+}
+#footer-ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+#footer-ul li {
+    margin: 5px;
+}
+.footer-item {
+    padding: 5px 10px;
+}
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-right: 15px;
+}
+#footer-social-container {
+    display: flex;
+    gap: 10%;
+    text-wrap:nowrap;
+}
+.footer-anchor {
+    text-decoration: none;
+    color: var(--font-1);
+    transition: 0.1s;
+}
+.footer-anchor:hover {
+    color: var(--accent);
+}
+.fa-brands {
+    color: var(--font-1);
+    margin: 5px;
+    border: none;
+    outline: none;
+}
+.fa-brands:hover {
+    color: var(--accent);
+}
+
 @media screen and (max-width: 1300px) {
     #main-container {
         grid-template-columns: 1fr 1fr;
@@ -546,7 +597,9 @@ footer {
             "projects"
             "projects"
             "announcements"
-            "trending"
+            "trending";
+        justify-content: center;
+        align-items: center;
     }
     #main-sidebar {
         display: flex;
@@ -584,14 +637,23 @@ footer {
         padding: 0;
     }
     #projects-wrapper {
-        grid-template-columns: repeat(auto-fit, 100%);
+        grid-template-columns: repeat(auto-fit, 1fr);
         grid-template-rows: 280px;
         grid-auto-rows: 280px;
+    }
+    .project-item {
+        width: 100%;
+    }
+    #announcements {
+        justify-self: center;
     }
     #announcements-wrapper{
         min-width: 90%;
         margin: 0;
     } 
+    #trending {
+        justify-self: center;
+    }
     #trending-wrapper {
         min-width: 90%;
         margin: 0;
