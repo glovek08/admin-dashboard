@@ -4,6 +4,7 @@ const themeCheckbox = document.querySelector('#theme-checkbox');
 const themeCheckboxLabel = document.querySelector('#theme-checkbox-label');
 const sidebarButtons = document.querySelectorAll(".sidebar-button");
 const sidebarSpans = document.querySelectorAll('.sidebar-span');
+const userDropdownMenuCheckbox = document.querySelector('#user-dropdown-menu-checkbox');
 
 checkScroll(); //Applies a bottom borded to each project item's text box if the text content is overflowing Y.
 
@@ -35,6 +36,7 @@ const changeTheme = () => {
 
 themeCheckbox.addEventListener('click', changeTheme);
 window.addEventListener('resize', checkScroll);
+userDropdownMenuCheckbox.addEventListener('click', toggleUserDropdownMenu);
 
 sidebarSpans.forEach(spanEl => {
     spanEl.addEventListener('click', (event) => {
@@ -49,6 +51,7 @@ sidebarButtons.forEach(button => {
         event.currentTarget.classList.add('dashboard-active');
     });
 });
+
 function checkScroll() {
     const projectTextBox = document.querySelectorAll('.project-text');
     projectTextBox.forEach(element => {
@@ -58,6 +61,18 @@ function checkScroll() {
             element.classList.remove('scrollable');
         }
     })
-}
+};
+
+function toggleUserDropdownMenu () {
+    let dropdownLabel = document.querySelector('#user-dropdown-menu-span');
+    if (userDropdownMenuCheckbox.checked) {
+        dropdownLabel.innerHTML = 'arrow_drop_up';
+        console.log('log Up')
+    } else if (!userDropdownMenuCheckbox.checked) {
+        dropdownLabel.innerHTML = 'arrow_drop_down';
+        console.log('log down')
+    }
+} 
+
 
 

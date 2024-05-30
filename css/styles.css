@@ -56,9 +56,9 @@ a:visited {
 
 html {
     font-family:
+        Roboto,
         system-ui,
         'Segoe UI',
-        Roboto,
         Helvetica,
         Arial,
         sans-serif,
@@ -602,6 +602,7 @@ main {
 }
 
 footer {
+    font-size: .8rem;
     background: var(--blue-3);
     min-height: 100px;
     width: 100%;
@@ -609,7 +610,7 @@ footer {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 10px 0 20px 0;
+    padding: 10px 5px;
     color: var(--gray-1);
 }
 
