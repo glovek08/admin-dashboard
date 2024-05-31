@@ -5,6 +5,7 @@ const themeCheckboxLabel = document.querySelector('#theme-checkbox-label');
 const sidebarButtons = document.querySelectorAll(".sidebar-button");
 const sidebarSpans = document.querySelectorAll('.sidebar-span');
 const userDropdownMenuCheckbox = document.querySelector('#user-dropdown-menu-checkbox');
+const closeUserDropDownMenuButton = document.querySelector('#close-user-dropdown-menu-button');
 
 checkScroll(); //Applies a bottom borded to each project item's text box if the text content is overflowing Y.
 
@@ -34,9 +35,15 @@ const changeTheme = () => {
     }
 }
 
+//********************************** EVENT LISTENER REALM ************************************/
+
 themeCheckbox.addEventListener('click', changeTheme);
 window.addEventListener('resize', checkScroll);
 userDropdownMenuCheckbox.addEventListener('click', toggleUserDropdownMenu);
+closeUserDropDownMenuButton.addEventListener('click', closeUserDropDownMenu);
+
+
+//*********************************** EVENT FUNCTIONS ****************************************/
 
 sidebarSpans.forEach(spanEl => {
     spanEl.addEventListener('click', (event) => {
@@ -63,8 +70,8 @@ function checkScroll() {
     })
 };
 
+const dropdownLabel = document.querySelector('#user-dropdown-menu-span');
 function toggleUserDropdownMenu () {
-    let dropdownLabel = document.querySelector('#user-dropdown-menu-span');
     if (userDropdownMenuCheckbox.checked) {
         dropdownLabel.innerHTML = 'arrow_drop_up';
         console.log('log Up')
@@ -73,6 +80,11 @@ function toggleUserDropdownMenu () {
         console.log('log down')
     }
 } 
+
+function closeUserDropDownMenu () {
+    dropdownLabel.innerHTML = 'arrow_drop_down';
+    userDropdownMenuCheckbox.checked = false;
+}
 
 
 
