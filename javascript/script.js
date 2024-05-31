@@ -36,11 +36,11 @@ const changeTheme = () => {
     }
 }
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', (event) => {
     const isClickInside = userDropdownMenu.contains(event.target) || event.target.id === 'user-dropdown-menu-checkbox' || event.target.id === 'user-dropdown-menu-span';
     if (!isClickInside) {
         userDropdownMenuCheckbox.checked = false;
-        toggleDropdownMenuVisibility(false);
+        toggleUserDropdownMenu();
     }
 });
 
