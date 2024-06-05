@@ -223,20 +223,46 @@ header {
     gap: 11px;
 }
 
-#header-pfp-label .material-symbols-outlined {
+#user-dropdown-menu-label .material-symbols-outlined {
     font-size: 2rem;
 }
 
-#header-pfp-label {
+#user-dropdown-menu-label {
     display: flex;
     align-items: center;
     justify-content: center;
     transition: 0.1s;
+    margin-left: 10px;    
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: url('../assets/profile-picture-small.png');
+    background-size: contain;
+}
+#user-dropdown-menu-label span {
+    position: relative;
+    left: 30px;
 }
 
-#header-pfp-label:hover {
+#user-dropdown-menu-label:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+/* #user-dropdown-menu-label::before {
+    content: "";
+    margin-left: 10px;    
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: url('../assets/profile-picture-small.png');
+    background-size: contain;
+} */
+#user-dropdown-menu-checkbox {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
 }
 
 #user-dropdown-menu {
@@ -268,12 +294,6 @@ header {
 
 #user-dropdown-menu nav ul li {
     margin: 10px 0;
-}
-
-#user-dropdown-menu nav ul li hr {
-    width: 80%;
-    border: .5px solid var(--gray-1);
-    border-radius: 20px;
 }
 
 #user-dropdown-menu nav ul li a {
@@ -331,7 +351,7 @@ main {
     min-height: 100dvh;
     max-height: fit-content;
     display: grid;
-    grid-template-columns: 190px 4fr;
+    grid-template-columns: 200px 4fr;
     grid-template-rows: 1fr;
     grid-template-areas:
         "sidebar main"
@@ -349,8 +369,13 @@ main {
     padding-right: 5%;
     overflow: hidden;
     grid-area: sidebar;
+    border-top: .5px solid var(--gray-1);
 }
-
+.sidebar-hr {
+    width: 80%;
+    border: .5px solid var(--gray-1);
+    border-radius: 50%;
+}
 #sidebar-title-container {
     display: flex;
     align-items: center;

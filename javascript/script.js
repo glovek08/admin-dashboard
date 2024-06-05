@@ -6,7 +6,10 @@ const sidebarButtons = document.querySelectorAll(".sidebar-button");
 const sidebarSpans = document.querySelectorAll('.sidebar-span');
 const userDropdownMenuCheckbox = document.querySelector('#user-dropdown-menu-checkbox');
 const userDropdownMenu = document.querySelector('#user-dropdown-menu');
+const userDropdownMenuLabel = document.querySelector('#user-dropdown-menu-label');
 const closeUserDropDownMenuButton = document.querySelector('#close-user-dropdown-menu-button');
+const dropdownSpanMaterial = document.querySelector('#user-dropdown-menu-span');
+const HEADER_HEIGHT = document.getElementsByTagName('header')[0].clientHeight;
 
 checkScroll(); //Applies a bottom borded to each project item's text box if the text content is overflowing Y.
 
@@ -50,6 +53,7 @@ themeCheckbox.addEventListener('click', changeTheme);
 window.addEventListener('resize', checkScroll);
 userDropdownMenuCheckbox.addEventListener('click', toggleUserDropdownMenu);
 closeUserDropDownMenuButton.addEventListener('click', closeUserDropdownMenu);
+// userDropdownMenuLabel.addEventListener('click', toggleUserDropdownMenu);
 
 
 //*********************************** EVENT FUNCTIONS ****************************************/
@@ -79,23 +83,24 @@ function checkScroll() {
     })
 };
 
-const dropdownLabel = document.querySelector('#user-dropdown-menu-span');
-const HEADER_HEIGHT = document.getElementsByTagName('header')[0].clientHeight;
 
 function toggleUserDropdownMenu () {
     if (userDropdownMenuCheckbox.checked) {
-        dropdownLabel.innerHTML = 'arrow_drop_up';
+        dropdownSpanMaterial.innerHTML = 'arrow_drop_up';
         toggleDropdownMenuVisibility(true);
-        console.log('log Up')
+        console.log('log down');
+        return;
     } else if (!userDropdownMenuCheckbox.checked) {
-        dropdownLabel.innerHTML = 'arrow_drop_down';
+        dropdownSpanMaterial.innerHTML = 'arrow_drop_down';
         toggleDropdownMenuVisibility(false);
-        console.log('log down')
+        console.log('log up');
+        return;
     }
+    //it's getting called twice, use outlines to check what elements are u pressing.
 } 
 
 function closeUserDropdownMenu () {
-    dropdownLabel.innerHTML = 'arrow_drop_down';
+    dropdownSpanMaterial.innerHTML = 'arrow_drop_down';
     userDropdownMenuCheckbox.checked = false;
     toggleDropdownMenuVisibility(false);
 }
